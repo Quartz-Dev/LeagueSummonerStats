@@ -20,6 +20,12 @@ function getSummonerId(summoner){
 
         summonerid = data[formatsummonername].id;
 
+        fs.access('profiles.json', fs.F_OK, function(err) {
+            if (err) {
+                fs.writeFileSync('profiles.json', '[]');
+            }
+        });
+
         var profiles = JSON.parse(fs.readFileSync("profiles.json")) || [];
 
         profiles.push({
@@ -34,9 +40,7 @@ function getSummonerId(summoner){
         return summonerid;
       });
     }
-  )
-
-  .catch(function(err) {
+  ).catch(function(err) {
     console.log('Fetch Error :-S', err);
   });
 
