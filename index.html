@@ -7,37 +7,6 @@
 <body>
   <h1>Summoner: <input type="text" name="Summoner" value="Annie Bot" id="summoner"></h1>
   <input type="button" name="Apply" value="Apply" onclick="apply()">
-  <script type="text/javascript">
-  function getSummonerId(summoner){
-    var formatsummonername = summoner.toLowerCase().replace(/\W*/g, "");
-    var summonerid = "test  ";
-    fetch("https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/" + summoner + "?api_key=03e76ce4-0e39-4501-9244-b2194ac146a7")
-    .then(
-      function(response) {
-        if (response.status !== 200) {
-          console.log('Looks like there was a problem. Status Code: ' +
-          response.status);
-          return;
-        }
-        response.json().then(function(data) {
-          console.log(data);
-          console.log(data[formatsummonername].id);
-          summonerid = data[formatsummonername].id;
-          alert(summoner + "'s ID: " + summonerid);
-          return summonerid;
-        });
-      }
-    )
-    .catch(function(err) {
-      console.log('Fetch Error :-S', err);
-    });
-    return summonerid;
-  }
-  function apply(){
-    var id = getSummonerId(document.getElementById("summoner").value);
-    var fs = require("fs");
-    fs.writeFile("Summonor", document.getElementById("summoner").value);
-  }
-  </script>
+  <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
