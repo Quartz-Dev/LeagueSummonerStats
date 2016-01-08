@@ -4,6 +4,8 @@ const fs = require("fs");
 
 function getSummonerId(summoner){
 
+  var formatsummonername = summoner.toLowerCase().replace(/\W*/g, "");
+
   fetch(apigetSummonerId + summoner + "?" + apikey)
   .then(
 
