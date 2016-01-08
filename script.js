@@ -22,7 +22,7 @@ function getSummonerId(summoner){
         console.log(data);
         console.log(data[formatsummonername].id);
 
-        summonerid = data[formatsummonername].id;
+        var summonerid = data[formatsummonername].id;
 
         fs.access('profiles.json', fs.F_OK, function(err) {
             if (err) {
@@ -41,14 +41,14 @@ function getSummonerId(summoner){
 
         alert(summoner + "'s ID: " + summonerid);
 
-        return summonerid;
+        //return summonerid;
       });
     }
   ).catch(function(err) {
     console.log('Fetch Error :-S', err);
   });
 
-  return summonerid;
+  //return summonerid;
 }
 
 function apply(){
