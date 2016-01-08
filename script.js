@@ -1,3 +1,5 @@
+'use strict';
+
 const apigetSummonerId = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/";
 const apikey = "api_key=03e76ce4-0e39-4501-9244-b2194ac146a7"
 const fs = require("fs");
