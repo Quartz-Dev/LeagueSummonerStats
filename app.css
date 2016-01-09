@@ -1,7 +1,108 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  display: flex;
+}
+
+.summoner-selector {
+  flex: auto;
+  max-width: 30%;
+  height: 100vh;
+}
+
+.summoner-selector ul {
+  margin: 0;
+  padding: 0;
+  border-right: 1px solid #ddd;
+  list-style-type: none;
+  height: 100%;
+  box-shadow: 0 0 4px black;
+  font-size: 16px;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+.summoner-selector ul li a {
+  padding: 10px 15px;
+  display: block;
+  width: 100%;
+  color: black;
+  text-decoration: none;
+}
+
+.summoner-selector ul li a:hover {
+  background-color: #ddd;
+}
+
+
+.summoner-selector ul li a:active {
+  background-color: #aaa;
+}
+
+.summoner-selector ul li.highlight a {
+  background-color: #333;
+  color: #eee;
+}
+
+.add-summoner {
+  padding: 10px;
+}
+
+.add-summoner form {
+  display: flex;
+}
+
+.add-summoner #newSummonerInput,
+.add-summoner #newSummonerButton {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 16px;
+}
+
+.add-summoner #newSummonerInput {
+  outline: none;
+  padding: 5px 0 5px 3px;
+  flex: 10;
+}
+
+.add-summoner #newSummonerButton {
+  outline: none;
+  background: none;
+  cursor: pointer;
+  padding: 5px 3px 5px 0;
+  font-weight: bold;
+  color: #ccc;
+  flex: 1;
+}
+
+.add-summoner #newSummonerButton:hover {
+  color: #000;
+
+}
+
+.add-summoner #newSummonerInput:focus,
+.add-summoner #newSummonerInput:focus ~ #newSummonerButton {
+    border-bottom: 1px solid black;
+}
+
+
+.summoner-container {
+  flex: 1;
+}
+
+/*
 .highlight {
   font-weight: bold;
   border: 1px solid black;
 }
+
 ul {
   list-style-type: none;
   border: 3px solid black;
