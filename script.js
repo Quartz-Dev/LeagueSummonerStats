@@ -1,26 +1,58 @@
 'use strict';
 
-const apigetSummonerId = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/";
-const apikey = "api_key=03e76ce4-0e39-4501-9244-b2194ac146a7"
+const API_URLS = {
+  GET_SUMMONER_ID: 'https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/'
+}
+const API_KEY = "03e76ce4-0e39-4501-9244-b2194ac146a7"
+
 const fs = require("fs");
 
+
+var vm = new Vue({
+  el: 'body',
+
+  data: {
+    summoner: {
+      name: '',
+    }
+  },
+
+  computed: {
+    summoner: {
+      id: function() {
+        return "hi";
+      }
+    }
+  }
+});
+
+/**
+ * Activates the selected summoner, updating the information on the screen and
+ * in the output files
+ */
+function apply(){
+
+  var id = getSummonerId(document.getElementById("summoner").value);
+
+}
+
+/**
+ * Returns the summoner's id stored in League's servers
+ *
+ * @param summoner The summoner's name
+ */
 function getSummonerId(summoner){
 
   var formatsummonername = summoner.toLowerCase().replace(/\W*/g, "");
 
-  fetch(apigetSummonerId + summoner + "?" + apikey)
-  .then(
-
-    function(response) {
+  fetch(API_URLS['GET_SUMMONER_ID'] + summoner + "?api_key=" + API_KEY)
+  .then(function(response) {
       if (response.status !== 200) {
         console.log('Looks like there was a problem. Status Code: ' +
         response.status);
         return;
       }
       response.json().then(function(data) {
-
-        console.log(data);
-        console.log(data[formatsummonername].id);
 
         var summonerid = data[formatsummonername].id;
 
@@ -47,12 +79,5 @@ function getSummonerId(summoner){
   ).catch(function(err) {
     console.log('Fetch Error :-S', err);
   });
-
-  //return summonerid;
-}
-
-function apply(){
-
-  var id = getSummonerId(document.getElementById("summoner").value);
 
 }

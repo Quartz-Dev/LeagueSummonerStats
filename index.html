@@ -7,10 +7,11 @@
 </head>
 <body>
   <div class="summoner-selector">
-    <h1>Summoner: <input type="text" name="Summoner" value="Annie Bot" id="summoner"></h1>
+    <h1>Summoner: <input type="text" name="Summoner" value="Annie Bot" id="summoner" v-model="summoner.name"></h1>
     <input type="button" name="Apply" value="Apply" onclick="apply()">
   </div>
 
+  <h3>{{ summoner.id }}</h3>
 
   <script src="vue.js"></script> <!-- Use vue.min.js for production -->
   <script src="script.js"></script>
