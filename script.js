@@ -22,9 +22,21 @@ var vm = new Vue({
 
   methods: {
     addNewSummoner: function() {
+      var summoner;
+      for (var i = 0; i < this.summoners.length; i++) {
+        summoner = this.summoners[i];
+        if(summoner.name == this.newSummonerInput) {
+          alert("Errror: Already Exists!")
+          return;
+        }
+      }
+      if (this.newSummonerInput == "") {
+        return;
+      }
       this.summoners.push({
         name: this.newSummonerInput
       });
+      this.newSummonerInput = '';
     }
   },
 
@@ -96,3 +108,20 @@ function getSummonerId(summoner){
   });
 
 }
+//
+var remote = require('remote');
+var Menu = remote.require('menu');
+var MenuItem = remote.require('menu-item');
+
+var menu = new Menu();
+menu.append(new MenuItem({ label: 'Remove', click: function(e) {
+  console.log(e.target.innerHTML);
+} }));
+
+window.addEventListener('contextmenu', function (e) {
+  if(e.target.matches('li')){
+    e.preventDefault();
+    menu.popup(remote.getCurrentWindow());
+  }
+},
+false);

@@ -9,9 +9,11 @@
   <div class="summoner-selector">
     <ul name="summoner" id="summoner">
       <li v-for="summoner in summoners" @click="selectedSummoner = summoner" v-bind:class="{'highlight' : summoner.name == selectedSummoner.name}">{{ summoner.name }}</li>
-      <li @click="addNewSummoner">Add new person: <input type="text" v-model="newSummonerInput"></li>
+      <li> <input type="text" v-model="newSummonerInput"> <button @click="addNewSummoner">Add Summoner</button></li>
     </ul>
   </div>
+
+  <h2> {{ selectedSummoner.name }} </h2>
 
   <script src="vue.js"></script> <!-- Use vue.min.js for production -->
   <script src="script.js"></script>
