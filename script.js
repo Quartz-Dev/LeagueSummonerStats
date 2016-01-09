@@ -2,28 +2,43 @@
 
 const API_URLS = {
   GET_SUMMONER_ID: 'https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/'
-}
-const API_KEY = "03e76ce4-0e39-4501-9244-b2194ac146a7"
+};
+const API_KEY = "03e76ce4-0e39-4501-9244-b2194ac146a7";
 
 const fs = require("fs");
 
+Vue.config.debug = true;
 
 var vm = new Vue({
   el: 'body',
 
   data: {
-    summoner: {
-      name: '',
+
+    summoners: [],
+    selectedSummoner: {},
+    newSummonerInput: '',
+
+  },
+
+  methods: {
+    addNewSummoner: function() {
+      this.summoners.push({
+        name: this.newSummonerInput
+      });
     }
   },
 
-  computed: {
-    summoner: {
-      id: function() {
-        return "hi";
-      }
-    }
+  ready: function() {
+    this.summoners.push(
+      { name: 'Bobby', id: 0},
+      { name: 'Jimmy', id: 0},
+      { name: 'Lizzy', id: 0},
+      { name: 'Richa', id: 0},
+      { name: 'Derek', id: 0}
+    );
   }
+
+
 });
 
 /**

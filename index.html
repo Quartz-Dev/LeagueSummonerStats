@@ -7,11 +7,11 @@
 </head>
 <body>
   <div class="summoner-selector">
-    <h1>Summoner: <input type="text" name="Summoner" value="Annie Bot" id="summoner" v-model="summoner.name"></h1>
-    <input type="button" name="Apply" value="Apply" onclick="apply()">
+    <ul name="summoner" id="summoner">
+      <li v-for="summoner in summoners" @click="selectedSummoner = summoner" v-bind:class="{'highlight' : summoner.name == selectedSummoner.name}">{{ summoner.name }}</li>
+      <li @click="addNewSummoner">Add new person: <input type="text" v-model="newSummonerInput"></li>
+    </ul>
   </div>
-
-  <h3>{{ summoner.id }}</h3>
 
   <script src="vue.js"></script> <!-- Use vue.min.js for production -->
   <script src="script.js"></script>
