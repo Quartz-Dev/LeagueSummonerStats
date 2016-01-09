@@ -9,7 +9,12 @@
   <div class="summoner-selector">
     <ul name="summoner" id="summoner">
       <li v-for="summoner in summoners" @click="selectedSummoner = summoner" v-bind:class="{'highlight' : summoner.name == selectedSummoner.name}">{{ summoner.name }}</li>
-      <li> <input type="text" v-model="newSummonerInput"> <button @click="addNewSummoner">Add Summoner</button></li>
+      <li>
+        <form>
+          <input type="text" v-model="newSummonerInput" id="newSummoner">
+          <input type="submit" @click="addNewSummoner" value="Add Summoner"></input>
+        </form>
+      </li>
     </ul>
   </div>
 
