@@ -9,9 +9,17 @@
   <div class="summoner-selector">
     <h1>Summoner: <input type="text" name="Summoner" value="Annie Bot" id="summoner" v-model="summoner.name"></h1>
     <input type="button" name="Apply" value="Apply" onclick="apply()">
+
+  </div>
+  <div class="profile_selector">
+    <button onclick="profileSelector()" class="dropbtn">Select Summoner</button>
+    <div id="myDropdown" class="dropdown-content">
+    <a onclick="apply()">Annie Bot</a>
+    <a onclick="apply()">QarthOs LoL</a>
+    <a onclick="apply()">rockhopper72</a>
   </div>
 
-  <h3>{{ summoner.id }}</h3>
+  <h3>{{ summoner.name }}</h3>
 
   <script src="vue.js"></script> <!-- Use vue.min.js for production -->
   <script src="script.js"></script>

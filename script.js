@@ -17,13 +17,13 @@ var vm = new Vue({
     }
   },
 
-  computed: {
-    summoner: {
-      id: function() {
-        return "hi";
-      }
-    }
-  }
+  // computed: {
+  //   summoner: {
+  //     id: function() {
+  //       return "hi";
+  //     }
+  //   }
+  // }
 });
 
 /**
