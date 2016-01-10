@@ -96,6 +96,10 @@ body, html {
 .summoner-container {
   padding-left: 10px;
   flex: 1;
+  background: url(http://hdlolwp.com/wp-content/uploads/2015/11/Panda-Annie-Wallpaper_by-epicrandompeep.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /*
