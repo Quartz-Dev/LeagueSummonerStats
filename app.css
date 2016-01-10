@@ -9,12 +9,17 @@ body, html {
 
 #app {
   display: flex;
+  background: url(http://hdlolwp.com/wp-content/uploads/2015/11/Panda-Annie-Wallpaper_by-epicrandompeep.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .summoner-selector {
   flex: auto;
   max-width: 30%;
   height: 100vh;
+  background: rgba(255,255,255,0.8);
 }
 
 .summoner-selector ul {
@@ -37,17 +42,17 @@ body, html {
 }
 
 .summoner-selector ul li a:hover {
-  background-color: #ddd;
+  background-color: white;
 }
 
 
 .summoner-selector ul li a:active {
-  background-color: #aaa;
+  background-color: rgba(150, 150, 150, 0.8);
 }
 
 .summoner-selector ul li.highlight a {
-  background-color: #333;
-  color: #eee;
+  background-color: rgba(60, 60, 60, 0.8);
+  color: white;
 }
 
 .add-summoner {
@@ -61,7 +66,7 @@ body, html {
 .add-summoner #newSummonerInput,
 .add-summoner #newSummonerButton {
   border: none;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid white;
   font-family: "Trebuchet MS", sans-serif;
   font-size: 16px;
 }
@@ -70,6 +75,7 @@ body, html {
   outline: none;
   padding: 5px 0 5px 3px;
   flex: 10;
+  background: none;
 }
 
 .add-summoner #newSummonerButton {
@@ -78,28 +84,25 @@ body, html {
   cursor: pointer;
   padding: 5px 3px 5px 0;
   font-weight: bold;
-  color: #ccc;
+  color: white;
   flex: 1;
 }
 
 .add-summoner #newSummonerButton:hover {
-  color: #000;
+  color: #aaa;
 
 }
 
 .add-summoner #newSummonerInput:focus,
 .add-summoner #newSummonerInput:focus ~ #newSummonerButton {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #aaa;
 }
 
 
 .summoner-container {
   padding-left: 10px;
   flex: 1;
-  background: url(http://hdlolwp.com/wp-content/uploads/2015/11/Panda-Annie-Wallpaper_by-epicrandompeep.png);
-  background-position: bottom right;
-  background-repeat: no-repeat;
-  background-size: cover;
+  color: white;
 }
 
 /*
