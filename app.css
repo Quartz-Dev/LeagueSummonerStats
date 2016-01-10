@@ -94,6 +94,7 @@ body, html {
 
 
 .summoner-container {
+  padding-left: 10px;
   flex: 1;
 }
 
