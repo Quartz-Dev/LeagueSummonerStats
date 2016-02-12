@@ -1,30 +1,27 @@
-# electron-quick-start
+## League Summoner Stats
 
-**Clone and run for a quick way to see an Electron in action.**
+The League Summoner Stats utility provides a simple interface for users to 
+display stats on their screen about any specific summoner. The utility outputs 
+text to a file, which can then be read by other programs.
 
-This is a minimal Electron application based on the [Quick Start Guide](http://electron.atom.io/docs/latest/tutorial/quick-start) within the Electron documentation.
+### Use Cases
 
-A basic Electron application needs just these files:
+[x] Twitch Live Streaming
 
-- `index.html` - A web page to render.
-- `main.js` - Starts the app and creates a browser window to render HTML.
-- `package.json` - Points to the app's main file and lists its details and dependencies.
+### To Use
 
-You can learn more about each of these components within the [Quick Start Guide](http://electron.atom.io/docs/latest/tutorial/quick-start).
+You can download an executable from the [releases 
+page](https://help.github.com/articles/basic-writing-and-formatting-syntax/), 
+or compile the program from source.
 
-## To Use
-
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
-
+Compiling from source:
 ```bash
 # Clone this repository
-$ git clone https://github.com/atom/electron-quick-start
+$ git clone https://github.com/Quartz-Dev/LeagueSummonerStats
 # Go into the repository
-$ cd electron-quick-start
+$ cd LeagueSummonerStats
 # Install dependencies and run the app
 $ npm install && npm start
 ```
-
-Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/latest).
 
 #### License [CC0 (Public Domain)](LICENSE.md)
