@@ -11,7 +11,7 @@ text to a file, which can then be read by other programs.
 ### To Use
 
 You can download an executable from the [releases
-page](https://help.github.com/articles/basic-writing-and-formatting-syntax/),
+page](https://github.com/Quartz-Dev/LeagueSummonerStats/releases),
 or compile the program from source.
 
 Compiling from source:
