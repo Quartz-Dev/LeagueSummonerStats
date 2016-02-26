@@ -1,27 +1,21 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "LeagueSummonerStats",
+  "version": "0.1.0",
+  "description": "A simple program to update summoner stats to a text file",
   "main": "main.js",
   "scripts": {
     "start": "electron main.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atom/electron-quick-start.git"
+    "url": "git+https://github.com/Quartz-Dev/LeagueSummonerStats.git"
   },
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial"
-  ],
   "author": "GitHub",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com/atom/electron-quick-start/issues"
+    "url": "https://github.com/Quartz-Dev/LeagueSummonerStats/issues"
   },
-  "homepage": "https://github.com/atom/electron-quick-start#readme",
+  "homepage": "https://github.com/Quartz-Dev/LeagueSummonerStats#readme",
   "devDependencies": {
     "electron-prebuilt": "^0.36.0"
   }
