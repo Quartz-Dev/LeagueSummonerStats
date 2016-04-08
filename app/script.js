@@ -114,20 +114,3 @@ function getSummonerId(summoner){
   });
 
 }
-//
-var remote = require('remote');
-var Menu = remote.require('menu');
-var MenuItem = remote.require('menu-item');
-
-var menu = new Menu();
-menu.append(new MenuItem({ label: 'Remove', click: function(e) {
-  console.log(e.target.innerHTML);
-} }));
-
-window.addEventListener('contextmenu', function (e) {
-  if(e.target.matches('li')){
-    e.preventDefault();
-    menu.popup(remote.getCurrentWindow());
-  }
-},
-false);
