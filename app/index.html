@@ -3,28 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>League Summoner Stats</title>
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="./main.css">
 </head>
 <body>
   <div id="app">
-    <div class="summoner-selector">
+
+    <aside class="summoner-selector">
       <ul>
-        <li v-for="summoner in summoners" @click="selectedSummoner = summoner" v-bind:class="{'highlight' : summoner.name == selectedSummoner.name}"><a href="#">{{ summoner.name }}</a></li>
+        <li
+            v-for="summoner in summoners"
+            @click="selectedSummoner = summoner"
+            v-bind:class="{'highlight' : summoner.name == selectedSummoner.name}"
+        >
+            <a href="#">{{ summoner.name }}</a>
+        </li>
         <li class="add-summoner">
-          <form>
+          <form @submit.prevent="addNewSummoner">
             <input type="text" v-model="newSummonerInput" id="newSummonerInput" placeholder="Add New Summoner">
-            <input type="submit" @click="addNewSummoner" value="+" id="newSummonerButton"></input>
+            <input type="submit" value="+" id="newSummonerButton"></input>
           </form>
         </li>
       </ul>
-    </div>
+    </aside>
 
     <div class="summoner-container">
       <h2> {{ selectedSummoner.name }} </h2>
     </div>
 
   </div>
-  <script src="./node_modules/vue/dist/vue.min.js"></script>
-  <script src="script.js"></script>
+  <script src="../node_modules/vue/dist/vue.min.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
