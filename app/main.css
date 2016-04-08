@@ -33,9 +33,13 @@ body, html {
   font-family: "Trebuchet MS", sans-serif;
 }
 
+.summoner-selector ul li {
+    display: flex;
+}
+
 .summoner-selector ul li a {
   padding: 10px 15px;
-  display: block;
+  flex: 1;
   width: 100%;
   color: black;
   text-decoration: none;
@@ -50,9 +54,21 @@ body, html {
   background-color: rgba(150, 150, 150, 0.8);
 }
 
-.summoner-selector ul li.highlight a {
+.summoner-selector ul li.highlight a,
+.summoner-selector ul li.highlight button {
   background-color: rgba(60, 60, 60, 0.8);
   color: white;
+}
+
+.summoner-selector ul li button {
+    background: none;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.summoner-selector ul li button:hover {
+    font-weight: bold;
 }
 
 .add-summoner {
@@ -61,6 +77,7 @@ body, html {
 
 .add-summoner form {
   display: flex;
+  width: 100%;
 }
 
 .add-summoner #newSummonerInput,
