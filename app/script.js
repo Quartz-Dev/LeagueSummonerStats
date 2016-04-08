@@ -13,16 +13,16 @@ var vm = new Vue({
   el: 'body',
 
   data: {
-
     summoners: [],
     selectedSummoner: {},
     newSummonerInput: '',
-
   },
 
   methods: {
     addNewSummoner: function() {
       var summoner;
+
+      // Make sure the summoner isn't already there
       for (var i = 0; i < this.summoners.length; i++) {
         summoner = this.summoners[i];
         if(summoner.name == this.newSummonerInput) {
@@ -30,12 +30,18 @@ var vm = new Vue({
           return;
         }
       }
+
+      // make sure they actually typed something in
       if (this.newSummonerInput == "") {
         return;
       }
+
+      // Add them to the summoner list
       this.summoners.push({
         name: this.newSummonerInput
       });
+
+      // Clear the input
       this.newSummonerInput = '';
     }
   },
