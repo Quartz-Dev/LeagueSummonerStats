@@ -16,6 +16,7 @@
             v-bind:class="{'highlight' : summoner.name == selectedSummoner.name}"
         >
             <a href="#">{{ summoner.name }}</a>
+            <button @click="summoners.$remove(summoner)">x</button>
         </li>
         <li class="add-summoner">
           <form @submit.prevent="addNewSummoner">
