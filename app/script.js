@@ -5,6 +5,9 @@ const API_URLS = {
 };
 const API_KEY = "03e76ce4-0e39-4501-9244-b2194ac146a7";
 
+var Vue = require('Vue');
+Vue.use(require('vue-resource'));
+
 const fs = require("fs");
 
 Vue.config.debug = true;
@@ -38,7 +41,8 @@ var vm = new Vue({
 
       // Add them to the summoner list
       this.summoners.push({
-        name: this.newSummonerInput
+        name: this.newSummonerInput,
+        id: getSummonerId(this.newSummonerInput)
       });
 
       // Clear the input
@@ -46,15 +50,6 @@ var vm = new Vue({
     }
   },
 
-  ready: function() {
-    this.summoners.push(
-      { name: 'Bobby', id: 0},
-      { name: 'Jimmy', id: 0},
-      { name: 'Lizzy', id: 0},
-      { name: 'Richa', id: 0},
-      { name: 'Derek', id: 0}
-    );
-  }
 
 
 });
