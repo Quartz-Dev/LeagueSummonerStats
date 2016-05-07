@@ -60,7 +60,7 @@ var vm = new Vue({
  */
 function apply(){
 
-  var id = getSummonerId(document.getElementById("summoner").value);
+  //var id = getSummonerId(document.getElementById("summoner").value);
 
 }
 
@@ -73,16 +73,13 @@ function getSummonerId(summoner){
 
   var formatsummonername = summoner.toLowerCase().replace(/\W*/g, "");
 
-  fetch(API_URLS['GET_SUMMONER_ID'] + summoner + "?api_key=" + API_KEY)
+  var a = fetch(API_URLS['GET_SUMMONER_ID'] + summoner + "?api_key=" + API_KEY)
+  .then(status)
+  .then(json)
   .then(function(response) {
-      if (response.status !== 200) {
-        console.log('Looks like there was a problem. Status Code: ' +
-        response.status);
-        return;
-      }
-      response.json().then(function(data) {
 
-        var summonerid = data[formatsummonername].id;
+
+        var summonerid = response[formatsummonername].id;
 
         fs.access('profiles.json', fs.F_OK, function(err) {
             if (err) {
@@ -101,11 +98,24 @@ function getSummonerId(summoner){
 
         alert(summoner + "'s ID: " + summonerid);
 
-        //return summonerid;
-      });
-    }
-  ).catch(function(err) {
+        return summonerid;
+      })
+  .catch(function(err) {
     console.log('Fetch Error :-S', err);
   });
+  console.log(a);
+  return a;
 
+}
+
+function status(response) {
+  if (response.status >= 200 && response.status < 300) {
+    return Promise.resolve(response)
+  } else {
+    return Promise.reject(new Error(response.statusText))
+  }
+}
+
+function json(response) {
+  return response.json()
 }
