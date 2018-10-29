@@ -7,6 +7,7 @@ text to a file, which can then be read by other programs.
 ### Use Cases
 
   - Twitch Live Streaming
+  - Youtube Gaming Streaming
 
 ### To Use
 
